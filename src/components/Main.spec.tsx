@@ -7,7 +7,9 @@ describe('<Main />', () => {
     render(<Main />)
 
     expect(
-      screen.getByRole('heading', { name: /Next.js 13 - Leaflet/i })
+      screen.getByRole('heading', {
+        name: /Next.js 13 - Leaflet/i,
+      })
     ).toBeInTheDocument()
   })
 })
