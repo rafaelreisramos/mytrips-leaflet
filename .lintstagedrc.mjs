@@ -10,8 +10,5 @@ export default {
     `next lint --max-warnings=0 --fix --file ${filenames
       .map((f) => path.relative(process.cwd(), f))
       .join(' --file ')}`,
-    `npx prettier --fix --file ${filenames
-      .map((f) => path.relative(process.cwd(), f))
-      .join(' --file ')}`,
   ],
 }
