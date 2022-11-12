@@ -6,5 +6,12 @@ const buildEslintCommand = (filenames) =>
     .join(' --file ')}`
 
 export default {
-  '{src,app}/**/*': [buildEslintCommand],
+  '{src,app}/**/*.(tx|tsx|js|jsx)': (filenames) => [
+    `next lint --max-warnings=0 --fix --file ${filenames
+      .map((f) => path.relative(process.cwd(), f))
+      .join(' --file ')}`,
+    `npx prettier --fix --file ${filenames
+      .map((f) => path.relative(process.cwd(), f))
+      .join(' --file ')}`,
+  ],
 }
