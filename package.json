@@ -12,6 +12,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.0.0",
     "leaflet": "^1.9.2",
     "next": "13.0.3",
     "phosphor-react": "^1.4.1",
