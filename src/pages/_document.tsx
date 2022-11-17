@@ -39,7 +39,7 @@ class MyDocument extends Document {
             crossOrigin=""
           />
         </Head>
-        <body>
+        <body className="bg-background text-gray-100">
           <Main />
           <NextScript />
         </body>

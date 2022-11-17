@@ -16,26 +16,3 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
-:root {
-  --highlight: #e20e8d;
-  --background: #030518;
-  --white: #eeeeee;
-
-  --container: 100rem;
-
-  --small: 1.5rem;
-  --medium: 3rem;
-  --large: 5rem;
-}
-
-html,
-body {
-  background: var(--background);
-  color: var(--white);
-}
-
-a {
-  color: var(--highlight);
-  text-decoration: none;
-}
