@@ -1,16 +1,22 @@
-import dynamic from 'next/dynamic'
-import LinkWrapper from '../components/LinkWrapper'
-import { Info } from 'phosphor-react'
+import { GetStaticProps } from 'next'
 
-const Map = dynamic(() => import('../components/Map'), { ssr: false })
+import client from '../graphql/client'
+import { GetPlacesQuery } from '../graphql/generated/graphql'
+import { GET_PLACES } from '../graphql/queries'
 
-export default function Home() {
-  return (
-    <>
-      <LinkWrapper href="about">
-        <Info size={32} />
-      </LinkWrapper>
-      <Map className="h-screen w-full" />
-    </>
-  )
+import { MapProps } from '../components/Map'
+import HomeTemplate from '../templates/Home'
+
+export default function Home({ places }: MapProps) {
+  return <HomeTemplate places={places} />
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { places } = await client.request<GetPlacesQuery>(GET_PLACES)
+
+  return {
+    props: {
+      places,
+    },
+  }
 }
