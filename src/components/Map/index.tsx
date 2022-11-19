@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import {
   MapContainer,
   TileLayer,
@@ -25,6 +26,8 @@ export default function Map({
   places = [],
   ...rest
 }: MapProps) {
+  const router = useRouter()
+
   return (
     <MapContainer
       className={className}
@@ -46,6 +49,11 @@ export default function Map({
               key={`${id}-${slug}`}
               position={[latitude, longitude]}
               title={name}
+              eventHandlers={{
+                click: () => {
+                  router.push(`places/${slug}`)
+                },
+              }}
             />
           )
         })}
