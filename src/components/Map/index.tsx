@@ -53,6 +53,10 @@ export default function Map({
       zoomSnap={0}
       zoom={2.5}
       minZoom={2.5}
+      maxBounds={[
+        [-180, 180],
+        [180, -180],
+      ]}
       {...rest}
     >
       <CustomTileLayer />
