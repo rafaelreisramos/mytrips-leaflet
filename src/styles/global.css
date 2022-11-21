@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.leaflet-container {
+  @apply bg-background;
+}
+
 * {
   padding: 0;
   margin: 0;
