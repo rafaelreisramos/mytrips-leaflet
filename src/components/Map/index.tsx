@@ -4,6 +4,7 @@ import {
   TileLayer,
   Marker,
   MapContainerProps,
+  useMap,
 } from 'react-leaflet'
 
 type Place = {
@@ -46,6 +47,19 @@ export default function Map({
     )
   }
 
+  const SmallScreenMap = () => {
+    const map = useMap()
+    const width =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth
+
+    if (width < 768) {
+      map.setMinZoom(1.75)
+    }
+    return null
+  }
+
   return (
     <MapContainer
       className={className}
@@ -59,6 +73,7 @@ export default function Map({
       ]}
       {...rest}
     >
+      <SmallScreenMap />
       <CustomTileLayer />
 
       {places?.length > 0 &&
