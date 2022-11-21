@@ -49,8 +49,10 @@ export default function Map({
   return (
     <MapContainer
       className={className}
-      center={[51.505, -0.09]}
-      zoom={3}
+      center={[0, 0]}
+      zoomSnap={0}
+      zoom={2.5}
+      minZoom={2.5}
       {...rest}
     >
       <CustomTileLayer />
