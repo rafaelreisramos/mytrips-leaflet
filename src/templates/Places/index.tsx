@@ -27,17 +27,16 @@ export default function PlacesTemplate({ place }: PlaceProps) {
   if (router.isFallback) return null
 
   return (
-    <section
-      className={`mt-32 flex items-center justify-center text-center flex-col max-w-[100rem] max-w m-auto`}
-    >
+    <section className="mt-32 flex flex-col items-center max-w-[100rem] m-auto">
       <LinkWrapper href="/">
         <X size={32} />
       </LinkWrapper>
 
-      <h1 className="text-7xl mb-20">{place.name}</h1>
       <div
-        className="text-justify prose-p:indent-16 prose prose-2xl max-w-none prose-invert prose-ul:ml-16"
-        dangerouslySetInnerHTML={{ __html: place.description?.html || '' }}
+        className="prose prose-base prose-h1:text-center prose-p:indent-16 max-w-6xl prose-invert"
+        dangerouslySetInnerHTML={{
+          __html: `<h1>${place.name}</h1> ${place.description?.html || ''}`,
+        }}
       />
 
       <div className="mt-16 grid gap-16">

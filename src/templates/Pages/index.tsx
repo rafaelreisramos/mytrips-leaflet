@@ -9,24 +9,14 @@ export type PageProps = {
 
 export default function PageTemplate({ heading, body }: PageProps) {
   return (
-    <section
-      className={`${
-        heading.toLowerCase() !== 'about' ? 'mt-32' : 'h-screen'
-      } flex items-center justify-center text-center flex-col max-w-[100rem] max-w m-auto`}
-    >
+    <section className="mt-32 flex flex-col items-center max-w-[100rem] m-auto">
       <LinkWrapper href="/">
         <X size={32} />
       </LinkWrapper>
 
-      <h1 className="text-7xl mb-20">{heading}</h1>
-
       <div
-        className={`${
-          heading.toLowerCase() !== 'about'
-            ? 'text-justify prose-p:indent-16'
-            : ''
-        } prose prose-2xl max-w-none prose-invert prose-ul:ml-16`}
-        dangerouslySetInnerHTML={{ __html: body }}
+        className="prose prose-base prose-h1:text-center prose-p:indent-16 prose-ul:ml-16 max-w-6xl prose-invert"
+        dangerouslySetInnerHTML={{ __html: `<h1>${heading}</h1> ${body}` }}
       />
     </section>
   )
