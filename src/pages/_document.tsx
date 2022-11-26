@@ -7,8 +7,6 @@ import Document, {
   NextScript,
 } from 'next/document'
 
-import Analytics from '../components/Analytics'
-
 class MyDocument extends Document {
   static async getInitialProps(
     ctx: DocumentContext
@@ -54,7 +52,6 @@ class MyDocument extends Document {
         <body className="bg-background text-gray-100">
           <Main />
           <NextScript />
-          <Analytics />
         </body>
       </Html>
     )

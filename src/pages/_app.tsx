@@ -6,6 +6,7 @@ import '../styles/global.css'
 import SEO from '../../next-seo.config'
 
 import { AppProps } from 'next/app'
+import Analytics from '../components/Analytics'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -19,6 +20,7 @@ function App({ Component, pageProps }: AppProps) {
       <DefaultSeo {...SEO} />
       <NextNProgress color="#cc79a7" />
       <Component {...pageProps} />
+      <Analytics />
     </>
   )
 }
