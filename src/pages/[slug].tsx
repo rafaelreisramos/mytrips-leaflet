@@ -7,12 +7,12 @@ import { GET_PAGES, GET_PAGE_BY_SLUG } from '../graphql/queries'
 
 import PageTemplate, { PageProps } from '../templates/Pages'
 
-export default function Page({ heading, body }: PageProps) {
+export default function Page({ page }: PageProps) {
   const router = useRouter()
 
   if (router.isFallback) return null
 
-  return <PageTemplate heading={heading} body={body} />
+  return <PageTemplate page={page} />
 }
 
 export const getStaticPaths = async () => {
@@ -32,8 +32,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      heading: page.heading,
-      body: page.body.html,
+      page,
     },
   }
 }
