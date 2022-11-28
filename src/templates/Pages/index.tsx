@@ -35,7 +35,7 @@ export default function PageTemplate({ page }: PageProps) {
         <div
           className="prose prose-base prose-h1:text-center prose-p:indent-16 prose-ul:ml-16 max-w-6xl prose-invert"
           dangerouslySetInnerHTML={{
-            __html: `<h1>${page.heading}</h1> ${page.body || ''}`,
+            __html: `<h1>${page.heading}</h1> ${page.body?.html || ''}`,
           }}
         />
       </section>
