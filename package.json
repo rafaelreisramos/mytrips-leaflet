@@ -13,6 +13,7 @@
     "codegen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
+    "@next/font": "13.0.3",
     "graphql": "^16.6.0",
     "graphql-request": "^5.0.0",
     "leaflet": "^1.9.2",

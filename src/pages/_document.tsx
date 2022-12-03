@@ -38,15 +38,9 @@ class MyDocument extends Document {
             integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
             crossOrigin=""
           />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin=""
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,500&display=swap"
-            rel="stylesheet"
+          <meta
+            name="google-site-verification"
+            content="GYTUrblSkAZ6M6IL-3hOQplFb__ei46ySGHOgqxKuow"
           />
         </Head>
         <body className="bg-background text-gray-100">

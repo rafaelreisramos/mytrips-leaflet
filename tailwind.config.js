@@ -11,7 +11,7 @@ module.exports = {
         background: '#030518',
       },
       fontFamily: {
-        sans: ['Roboto', ...fontFamily.sans],
+        sans: ['var(--font-roboto)', ...fontFamily.sans],
       },
     },
   },
